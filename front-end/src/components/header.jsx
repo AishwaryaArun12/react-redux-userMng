@@ -1,0 +1,37 @@
+import React from 'react'
+import './App.css'
+import { selectUser,clearUser } from '../../redux/userSlice'
+import { useSelector,useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
+const header = () => {
+    const user = useSelector(selectUser);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+  return (
+    <div>
+      <nav className="navbar navbar-expand-lg shadow-lg bg-body-tertiary rounded">
+     <div className="container-fluid">
+    <a className="navbar-brand" href="#">
+        <img id='logo' src="data:image/jpeg;base64,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" alt=""  />
+    </a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div className="navbar-nav ms-auto me-4" id='navLink'>
+        {!user ? <><a className="nav-link" aria-current="page" href="/login">Login</a>
+        <a className="nav-link" href="/signup">Signup</a></> : <h3 onClick={()=>{
+            dispatch(clearUser()); 
+            localStorage.removeItem('token'); 
+            navigate('/login')}} className="nav-link" href="#">Logout</h3>}
+        
+      </div>
+    </div>
+    </div>
+  </nav>
+    </div>
+  )
+}
+
+export default header
