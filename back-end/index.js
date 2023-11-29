@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const userRouter = require('./routes/userRouter')
 require('dotenv').config();
+const path = require('path');
 const app = express();
 app.use(cors());
 // Bodyparser middleware
