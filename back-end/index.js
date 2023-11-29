@@ -14,6 +14,11 @@ app.use(
     extended: false
   })
 );
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', 'default-src \'self\'; font-src https://fonts.gstatic.com');
+  next();
+});
+
 app.use('/',userRouter);
 app.use(express.static(path.join(__dirname, 'dist')));
 
