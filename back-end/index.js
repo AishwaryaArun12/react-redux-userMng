@@ -33,7 +33,7 @@ const db = process.env.mongodb;
 // Connect to MongoDB
 mongoose
   .connect(
-    db,
+    `${db}/user`,
     { useNewUrlParser: true }
   )
   .then(() => console.log("MongoDB successfully connected"))
