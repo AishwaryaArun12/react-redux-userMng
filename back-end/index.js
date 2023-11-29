@@ -20,13 +20,16 @@ app.use((req, res, next) => {
 });
 
 app.use('/',userRouter);
-app.use(express.static(path.join(__dirname, '../front-end/dist')));
+app.use(express.static(path.join(__dirname, 'front-end', 'dist')));
+
+
 
 app.use(express.static('public'));
 
 
+// Handle all routes by serving the index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../front-end/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'front-end', 'dist', 'index.html'));
 });
 // DB Config
 const db = process.env.mongodb;
