@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/',userRouter);
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../front-end/dist')));
 
 app.use(express.static('public'));
 
