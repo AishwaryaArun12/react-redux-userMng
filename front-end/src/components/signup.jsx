@@ -23,7 +23,7 @@ const signup = () => {
       password : passwordRef.current.value
     }
     try {
-       await axios.post('http://localhost:3000/register', formData, {
+       await axios.post('https://usermng.onrender.com/register', formData, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -40,7 +40,7 @@ const signup = () => {
   return (
     <div>
       <Header />
-      <form method='POST' onSubmit={handleSubmit} action='http://localhost:3000/register' className='mx-auto p-4 mt-4 pt-4 border border-dark w-50'>
+      <form method='POST' onSubmit={handleSubmit} action='https://usermng.onrender.com/register' className='mx-auto p-4 mt-4 pt-4 border border-dark w-50'>
 
         <h3 className='m-4 text-center'>SIGNUP</h3>
         { error && <h5 className='text-danger mb-3'>{error}</h5>}

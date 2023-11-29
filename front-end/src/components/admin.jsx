@@ -52,7 +52,7 @@ const admin = () => {
             password 
           }
           try {
-             await axios.post('http://localhost:3000/register', formData, {
+             await axios.post('https://usermng.onrender.com/register', formData, {
               headers: {
                 'Content-Type': 'application/json',
               },
@@ -80,21 +80,21 @@ const admin = () => {
         }
        },[])
     useEffect(()=>{
-        axios.get('http://localhost:3000/getUsers').then(data=>{
+        axios.get('https://usermng.onrender.com/getUsers').then(data=>{
             setUsers(data.data.users);
         })
     },[])
     async function getAllUsers(){
-       const users =await axios.get('http://localhost:3000/getUsers')
+       const users =await axios.get('https://usermng.onrender.com/getUsers')
         setUsers(users.data.users);
     }
     async function handleClick(id,active,i){
         
        if(active){
-        const result = await axios.put(`http://localhost:3000/blockUser/${id}`);
+        const result = await axios.put(`https://usermng.onrender.com/blockUser/${id}`);
         setUsers(prev=>{prev[i].active = !active; return [...prev]});
        }else{
-        const result = await axios.put(`http://localhost:3000/activeUser/${id}`)
+        const result = await axios.put(`https://usermng.onrender.com/activeUser/${id}`)
         setUsers(prev=>{prev[i].active = !active; return [...prev]});
        }
        
@@ -111,7 +111,7 @@ const admin = () => {
                     designation ,
                     address
                     }
-                await axios.put('http://localhost:3000/editProfile',data);
+                await axios.put('https://usermng.onrender.com/editProfile',data);
                 await getAllUsers()
                 
                 closeProfileModal();

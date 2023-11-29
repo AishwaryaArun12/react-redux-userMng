@@ -8,7 +8,7 @@ const initialState = {
     error : null
 }
 export const loginUserAsync = createAsyncThunk('user/login', async(credential)=>{
-    const result = await axios.post('http://localhost:3000/login',credential);
+    const result = await axios.post('https://usermng.onrender.com/login',credential);
             const {token,user,admin} = result.data;
             localStorage.setItem('token', token);          
            return {...user,admin:admin};

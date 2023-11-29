@@ -70,7 +70,7 @@ const home = () => {
             oldEmail : oldEmailRef.current.value,
             newEmail : newEmailRef.current.value
             }
-        await axios.put('http://localhost:3000/editEmail',data);
+        await axios.put('https://usermng.onrender.com/editEmail',data);
        
         dispatch(loginUserAsync({email :newEmailRef.current.value,login :true}))
         closeModal();
@@ -86,7 +86,7 @@ const home = () => {
             email : user.email,
             newPassword : newPasswordRef.current.value
             }
-        await axios.put('http://localhost:3000/editPassword',data);
+        await axios.put('https://usermng.onrender.com/editPassword',data);
         
         dispatch(loginUserAsync({email :user.email,login :true}))
         closePasswordModal();
@@ -104,7 +104,7 @@ const home = () => {
             designation ,
             address
             }
-        let result = await axios.put('http://localhost:3000/editProfile',data);
+        let result = await axios.put('https://usermng.onrender.com/editProfile',data);
         
         dispatch(loginUserAsync({email :user.email,login :true}))
         closeProfileModal();
@@ -119,7 +119,7 @@ const home = () => {
     const file = e.target.files[0]
     formData.append('file', file);
     formData.append('email', user.email);
-    let result = await axios.put('http://localhost:3000/editProfilePic',formData,{
+    let result = await axios.put('https://usermng.onrender.com/editProfilePic',formData,{
         headers: {
             'Content-Type': 'multipart/form-data',
           },
