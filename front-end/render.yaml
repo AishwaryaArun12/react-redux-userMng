@@ -1,7 +1,0 @@
-services:
-  - name: frontend
-    buildCommand: npm run build
-    startCommand: npm run dev
-    env:
-      - key: NODE_ENV
-        value: development
