@@ -8,7 +8,9 @@ const initialState = {
     error : null
 }
 export const loginUserAsync = createAsyncThunk('user/login', async(credential)=>{
-    const result = await axios.post('https://usermng.onrender.com/login',credential);
+    console.log('jfffffffffffff')
+     axios.post('https://usermng.onrender.com/login',credential).then(res=>{console.log(res,'aaaaaaaaaaaaawwwwww');}).catch(error=>{console.log(error,'aaaaaaaaaaaaaaaaa')});
+    
             const {token,user,admin} = result.data;
             localStorage.setItem('token', token);          
            return {...user,admin:admin};
@@ -37,7 +39,7 @@ const userSlice = createSlice({
         .addCase(loginUserAsync.rejected, (state,action)=>{
             state.loading = false;
             state.user = null;
-            console.log(action);
+            console.log(action,'qqqqqqqqqqqqqqqq');
             state.error = action.payload?.error || 'Sorry, Password or Email does not match any user';
         })
     }

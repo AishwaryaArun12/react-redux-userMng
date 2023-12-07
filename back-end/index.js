@@ -7,7 +7,8 @@ require('dotenv').config();
 const path = require('path');
 const app = express();
 app.use(cors({
-  origin: '*'
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 // Bodyparser middleware
 app.use(bodyParser.json());
