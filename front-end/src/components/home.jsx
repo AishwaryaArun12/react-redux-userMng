@@ -60,7 +60,7 @@ const home = () => {
         }
         
         dispatch(loginUserAsync(data)).then(res=>{
-          console.log(user,'wwwwwwwwwww')
+          console.log(user,'wwwwwwwwwww',res)
           setName(user.name);
           setAddress(user.address);
           setMobile(user.mobile);
