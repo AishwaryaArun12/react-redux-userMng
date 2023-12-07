@@ -46,17 +46,17 @@ const login = () => {
         <h3 className='m-4 text-center'>LOGIN</h3>
        { error && <h5 className='text-danger mb-3'>{error}</h5>}
        { errors && <h5 className='text-danger mb-3'>{errors}</h5>}
-        <div class="mb-3">
-          <label htmlFor="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" ref={emailRef} aria-describedby="emailHelp" />
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+          <input type="email" className="form-control" id="exampleInputEmail1" ref={emailRef} aria-describedby="emailHelp" />
           
         </div>
-        <div class="mb-3">
-          <label htmlFor="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" ref={passwordRef} id="exampleInputPassword1" />
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+          <input type="password" className="form-control" ref={passwordRef} id="exampleInputPassword1" />
         </div>
        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form> : <h1>Loading...........</h1>}
     </div>
   )

@@ -56,13 +56,14 @@ const home = () => {
             login : true,
         }
         dispatch(loginUserAsync(data));
+        setName(user.name);
+        setAddress(user.address);
+        setMobile(user.mobile);
+        setDesignation(user.designation);
     }else{
       navigate('/login')
     }
-    setName(user.name);
-    setAddress(user.address);
-    setMobile(user.mobile);
-    setDesignation(user.designation);
+   
    },[])
    async function editEmail(){
 
