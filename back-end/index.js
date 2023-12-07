@@ -6,7 +6,9 @@ const userRouter = require('./routes/userRouter')
 require('dotenv').config();
 const path = require('path');
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://usermng-api.onrender.com'
+}));
 // Bodyparser middleware
 app.use(bodyParser.json());
 app.use(
