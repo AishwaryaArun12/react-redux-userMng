@@ -7,7 +7,7 @@ require('dotenv').config();
 const path = require('path');
 const app = express();
 app.use(cors({
-  origin: 'https://usermng-api.onrender.com'
+  origin: '*'
 }));
 // Bodyparser middleware
 app.use(bodyParser.json());
@@ -16,10 +16,6 @@ app.use(
     extended: false
   })
 );
-app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', 'default-src \'self\'; font-src https://fonts.gstatic.com');
-  next();
-});
 
 app.use('/',userRouter);
 app.use(express.static(path.join(__dirname,'..', 'front-end')));
@@ -29,10 +25,7 @@ app.use(express.static(path.join(__dirname,'..', 'front-end')));
 app.use(express.static('public'));
 
 
-// Handle all routes by serving the index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname,'..', 'front-end',  'index.html'));
-});
+// Handle all routes by serving the index.html.sendFile(path.join(__dirname, '..', 'front-end',  'index.html'));
 // DB Config
 const db = process.env.mongodb;
 // Connect to MongoDB
