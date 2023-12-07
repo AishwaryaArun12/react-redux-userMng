@@ -22,10 +22,6 @@ app.use('/',userRouter);
 // Assuming 'public' is the directory you want to serve
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-// Handle all routes by serving the index.html.sendFile(path.join(__dirname, '..', 'front-end',  'index.html'));
-// DB Config
 const db = process.env.mongodb;
 // Connect to MongoDB
 mongoose

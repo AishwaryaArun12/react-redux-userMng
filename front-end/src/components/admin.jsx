@@ -183,7 +183,7 @@ const admin = () => {
     {users?.[0] && users.map((i,index)=>{
         return( <tr>
       <th scope="row">{index}</th>
-      <td><img src={i.image == 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp'? 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp':`http://localhost:3000/${i.image}`} width={'90px'} height={'100px'} alt="" /></td>
+      <td><img src={i.image == 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp'? 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp':`https://usermng.onrender.com/${i.image}`} width={'90px'} height={'100px'} alt="" /></td>
       <td>{i.name}</td>
       <td>{i.email}</td>
       <td>{i.password}</td>
