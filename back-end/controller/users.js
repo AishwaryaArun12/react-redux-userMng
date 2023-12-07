@@ -18,7 +18,7 @@ module.exports  = {
        }
     },
     login : async(req,res)=>{
-        console.log(req.body,'ssssssss')
+        
         try {
             let user = null;
             if(req.body.login){

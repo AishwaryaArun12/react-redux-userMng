@@ -31,4 +31,4 @@ const userSchema = new schema({
         default : 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp',
     }
 })
-module.exports = mongoose.model('users', userSchema)
+module.exports = mongoose.model('usermng', userSchema)
