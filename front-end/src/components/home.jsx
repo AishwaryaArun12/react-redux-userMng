@@ -45,6 +45,9 @@ const home = () => {
         setIsProfileModalOpen(false);
       };
    useEffect(()=>{
+    if(!localStorage.getItem('token')){
+      navigate('/login');
+    }
    
     if(localStorage.getItem('token') && !user){
         dispatch(loginUserAsync())
@@ -57,15 +60,14 @@ const home = () => {
         }
         
         dispatch(loginUserAsync(data));
-       
-       
-    }else{
-      navigate('/login')
-    }
+        console.log(user,'wwwwwwwwwww')
         setName(user.name);
         setAddress(user.address);
         setMobile(user.mobile);
         setDesignation(user.designation);
+       
+    }
+       
    },[])
    async function editEmail(){
 
