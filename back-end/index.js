@@ -19,10 +19,6 @@ app.use(
 );
 
 app.use('/',userRouter);
-app.use(express.static(path.join(__dirname,'..', 'front-end')));
-
-
-
 app.use(express.static('public'));
 
 
