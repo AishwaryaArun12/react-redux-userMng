@@ -4,6 +4,7 @@ import { loginUserAsync, selectError, selectUser } from '../../redux/userSlice'
 import { useDispatch, useSelector } from 'react-redux';
 import {jwtDecode} from 'jwt-decode';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const home = () => {
@@ -14,6 +15,7 @@ const home = () => {
     const newEmailRef = useRef();
     const oldPasswordRef = useRef();
     const newPasswordRef = useRef();
+    const navigate = useNavigate();
     const [name,setName] = useState();
     const [designation,setDesignation] = useState();
     const [address,setAddress] = useState();
@@ -43,7 +45,7 @@ const home = () => {
         setIsProfileModalOpen(false);
       };
    useEffect(()=>{
-    
+    console.log(user,'llllllllllll',localStorage.getItem('token'));
     if(localStorage.getItem('token') && !user){
         dispatch(loginUserAsync())
         const token = localStorage.getItem('token');
@@ -54,6 +56,8 @@ const home = () => {
             login : true,
         }
         dispatch(loginUserAsync(data));
+    }else{
+      navigate('/login')
     }
     setName(user.name);
     setAddress(user.address);
