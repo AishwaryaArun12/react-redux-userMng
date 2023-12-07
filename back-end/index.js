@@ -19,7 +19,9 @@ app.use(
 );
 
 app.use('/',userRouter);
-app.use(express.static('public'));
+// Assuming 'public' is the directory you want to serve
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // Handle all routes by serving the index.html.sendFile(path.join(__dirname, '..', 'front-end',  'index.html'));
