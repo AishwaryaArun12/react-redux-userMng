@@ -45,7 +45,7 @@ const home = () => {
         setIsProfileModalOpen(false);
       };
    useEffect(()=>{
-    console.log(user,'llllllllllll',localStorage.getItem('token'));
+   
     if(localStorage.getItem('token') && !user){
         dispatch(loginUserAsync())
         const token = localStorage.getItem('token');
@@ -57,11 +57,11 @@ const home = () => {
         }
         
         dispatch(loginUserAsync(data));
-        console.log(user,'sssssssssssssss');
-        // setName(user.name);
-        // setAddress(user.address);
-        // setMobile(user.mobile);
-        // setDesignation(user.designation);
+       
+        setName(user.name);
+        setAddress(user.address);
+        setMobile(user.mobile);
+        setDesignation(user.designation);
     }else{
       navigate('/login')
     }
@@ -146,7 +146,7 @@ const home = () => {
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src={user.image == 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp'? 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp':`http://localhost:3000/${user.image}`} alt="avatar"
+            <img src={user.image == 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp'? 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp':`https://usermng.onrender.com/${user.image}`} alt="avatar"
               class="rounded-circle img-fluid" style={{width: "150px"}}/>
             <h5 class="my-3">{user.name}</h5>
             <p class="text-muted mb-1">{user.designation ? user.designation : 'Designation : Nil'}</p>
