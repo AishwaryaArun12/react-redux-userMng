@@ -62,10 +62,10 @@ const home = () => {
     }else{
       navigate('/login')
     }
-        setName(user.name);
-        setAddress(user.address);
-        setMobile(user.mobile);
-        setDesignation(user.designation);
+        // setName(user.name);
+        // setAddress(user.address);
+        // setMobile(user.mobile);
+        // setDesignation(user.designation);
    },[])
    async function editEmail(){
 
