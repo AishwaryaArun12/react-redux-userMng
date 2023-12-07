@@ -59,6 +59,8 @@ const home = () => {
         dispatch(loginUserAsync(data));
        
        
+    }else{
+      navigate('/login')
     }
         setName(user.name);
         setAddress(user.address);
