@@ -44,7 +44,7 @@ const home = () => {
       const closeProfileModal = () => {
         setIsProfileModalOpen(false);
       };
-   useEffect(()=>{
+   useEffect(async()=>{
     if(!localStorage.getItem('token')){
       navigate('/login');
     }
@@ -59,7 +59,7 @@ const home = () => {
             login : true,
         }
         
-        dispatch(loginUserAsync(data));
+       await dispatch(loginUserAsync(data));
         console.log(user,'wwwwwwwwwww')
         setName(user.name);
         setAddress(user.address);
